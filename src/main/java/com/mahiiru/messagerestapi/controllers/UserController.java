@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/users")
@@ -26,7 +27,7 @@ public class UserController {
 
     @GetMapping
     @RequestMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id){
+    public ResponseEntity<Optional<User>> getUserById(@PathVariable Long id){
         //HTTP 200
         return ResponseEntity.ok(service.getUserById(id));
     }
