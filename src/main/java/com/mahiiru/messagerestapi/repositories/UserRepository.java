@@ -1,4 +1,7 @@
 package com.mahiiru.messagerestapi.repositories;
 
-public interface UserRepository {
+import com.mahiiru.messagerestapi.models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User,Long> {
 }
