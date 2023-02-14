@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/messages")
@@ -20,12 +21,12 @@ public class MessageController {
 
     @GetMapping
     public ResponseEntity<List<Message>> getAllMessages(){
-        return ResponseEntity.ok(service.getAllMessages);
+        return ResponseEntity.ok(service.getAllMessages());
     }
 
     @GetMapping
     @RequestMapping("/{id}")
-    public ResponseEntity<Message> getMessageByID(@PathVariable Long id){
+    public ResponseEntity<Optional<Message>> getMessageByID(@PathVariable Long id){
         return ResponseEntity.ok(service.getMessageByID(id));
     }
 
