@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @PutMapping
-    @RequestMapping("/{id}")
+    @RequestMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user){
         User updatedUser = service.updateUser(id,user);
         //HTTP 200
@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @DeleteMapping
-    @RequestMapping("/{id}")
+    @RequestMapping("/delete/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id){
         service.deleteUser(id);
         //HTTP 204
