@@ -1,6 +1,8 @@
 package com.mahiiru.messagerestapi.models;
 
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.mahiiru.messagerestapi.JsonViews;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,6 +24,7 @@ public class Message {
     private String text;
     private LocalDateTime date;
 
+    @JsonView(JsonViews.MessageSummary.class)
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

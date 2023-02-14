@@ -1,6 +1,8 @@
 package com.mahiiru.messagerestapi.controllers;
 
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.mahiiru.messagerestapi.JsonViews;
 import com.mahiiru.messagerestapi.models.Message;
 import com.mahiiru.messagerestapi.services.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+@JsonView(JsonViews.MessageSummary.class)
 @RestController
 @RequestMapping("/api/v1/messages")
 public class MessageController {
